@@ -5,12 +5,12 @@
 
 # Replace the given path with the actual path where the directories or files are
 
-python ../Python\ dependencies/text2ldac-master/text2ldac.py -o ./data ./lda
+python ../Python\ dependencies/text2ldac-master/text2ldac.py -o ./lda ./data
 
 echo "Renaming lda files according to upper directory"
 
-cd data
-for d in *; do mv "$d" "`echo $d | sed 's/lda/sff/'`"; done
+cd lda
+for d in *; do mv "$d" "`echo $d | sed 's/data/sff/'`"; done
 cd ..
 
 echo "Fitting Hierarchical Dirichlet Process"
